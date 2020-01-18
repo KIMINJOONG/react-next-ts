@@ -4,7 +4,9 @@ import Link from "next/link";
 const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => (
   <div>
     <h1>Hello world! - user agent: {userAgent}</h1>
-    <Link href="/boards/1">boards</Link>
+    <Link href="/boards/1">
+      <a>boards</a>
+    </Link>
   </div>
 );
 
