@@ -11,7 +11,7 @@ const myProject = ({ Component, pageProps }: IProps) => {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Next.js TypeScript Quickstart</title>
+        <title>my new Project</title>
       </Head>
       <AppLayout>
         <Component {...pageProps} />
