@@ -21,24 +21,11 @@ const dummy = {
   ]
 };
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      flexGrow: 1
-    },
-    paper: {
-      padding: theme.spacing(2),
-      textAlign: "center",
-      color: theme.palette.text.secondary
-    }
-  })
-);
 const Board = () => {
-  const classes = useStyles();
   const router = useRouter();
   const { id } = router.query;
   return (
-    <div className={classes.root}>
+    <div>
       <Grid container>
         <Grid item xs={12}>
           <h1>{dummy.title}</h1>

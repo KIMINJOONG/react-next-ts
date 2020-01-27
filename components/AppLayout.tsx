@@ -1,22 +1,22 @@
 import { ReactNode } from "react";
 import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
-import Button from "@material-ui/core/Button";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import { Container } from "@material-ui/core";
+import Link from "next/link";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root: {
-      flexGrow: 1,
-      "& > *": {
-        margin: theme.spacing(1)
-      }
+    header: {
+      height: "50px"
     },
-    paper: {
-      padding: theme.spacing(2),
-      textAlign: "center",
-      color: theme.palette.text.secondary
+    content: {
+      height: "700px"
+    },
+    loginJoin: {
+      textAlign: "center"
+    },
+    footer: {
+      height: "80px"
     }
   })
 );
@@ -31,15 +31,37 @@ const AppLayout = ({ children }: IProps) => {
 
   return (
     <Container maxWidth="sm">
-      <Grid item xs={12}>
-        <span>헤더</span>
+      <Grid container xs={12} className={classes.header}>
+        <Grid item xs={8}>
+          <Grid container justify="center" spacing={2}>
+            <Grid item>
+              <Link href="/">
+                <a>홈</a>
+              </Link>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item xs={4}>
+          <Grid container justify="center" spacing={2}>
+            <Grid item>
+              <Link href="/login">
+                <a>로그인</a>
+              </Link>
+            </Grid>
+            <Grid item>
+              <Link href="/join">
+                <a>회원가입</a>
+              </Link>
+            </Grid>
+          </Grid>
+        </Grid>
       </Grid>
-      <Grid container spacing={3}>
+      <Grid container spacing={3} className={classes.content}>
         <Grid item xs={12}>
           {children}
         </Grid>
       </Grid>
-      <Grid item xs={12}>
+      <Grid item xs={12} className={classes.footer}>
         <span>푸터</span>
       </Grid>
     </Container>
