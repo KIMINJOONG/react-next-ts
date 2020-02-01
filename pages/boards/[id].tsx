@@ -17,7 +17,7 @@ const dummy = {
   country: "한국",
   place: "서울특별시 갱냄",
   images: [
-    "http://www.bodonews.com/imgdata/bodonews_com/201605/2016052054348111.png"
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSO0vyXejYXLyLixtnMLybTiXXd1pP30ktKatHpWUodVLo4BMPK"
   ]
 };
 
@@ -28,12 +28,15 @@ const Board = () => {
     <div>
       <Grid container>
         <Grid item xs={12}>
-          <h1>{dummy.title}</h1>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSO0vyXejYXLyLixtnMLybTiXXd1pP30ktKatHpWUodVLo4BMPK" />
         </Grid>
         <Grid item xs={12}>
-          <Typography variant="body1" gutterBottom>
-            {dummy.content}
+          <h1>{dummy.title}</h1>
+          <Typography color={"textPrimary"}>
+            {dummy.competitionStartDate} • {dummy.country}, {dummy.place} •{" "}
+            {dummy.category} •{dummy.genre}
           </Typography>
+          <Typography color={"textPrimary"}>{dummy.content}</Typography>
         </Grid>
       </Grid>
     </div>

@@ -6,6 +6,8 @@ import GridListTile from "@material-ui/core/GridListTile";
 import GridListTileBar from "@material-ui/core/GridListTileBar";
 import ListSubheader from "@material-ui/core/ListSubheader";
 import Router from "next/router";
+import Paper from "@material-ui/core/Paper";
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
@@ -15,9 +17,19 @@ const useStyles = makeStyles((theme: Theme) =>
       overflow: "hidden",
       backgroundColor: theme.palette.background.paper
     },
+    paper: {
+      height: 140,
+      width: 100
+    },
     gridList: {
       width: 500,
       height: 450
+    },
+    content: {
+      "&:hover": {
+        cursor: "pointer",
+        background: "#f00"
+      }
     }
   })
 );
@@ -54,6 +66,7 @@ const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => {
         </GridListTile>
         {tileData.map((tile: any) => (
           <GridListTile
+            className={classes.content}
             key={tile.img}
             onClick={() => Router.push(`/boards/${tile.idx}`)}
           >
