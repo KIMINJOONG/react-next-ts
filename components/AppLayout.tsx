@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme: Theme) =>
       height: "50px"
     },
     content: {
-      height: "700px"
+      height: "100vh"
     },
     loginJoin: {
       textAlign: "center"
@@ -42,7 +42,7 @@ const AppLayout = ({ children }: IProps) => {
           </Grid>
         </Grid>
         <Grid item xs={4}>
-          <Grid container justify="center" spacing={2}>
+          <Grid container justify="center" spacing={1}>
             <Grid item>
               <Link href="/login">
                 <a>로그인</a>

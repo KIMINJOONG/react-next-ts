@@ -21,19 +21,32 @@ const dummy = {
   ]
 };
 
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    image: {
+      maxWidth: "100%",
+      height: "auto"
+    }
+  })
+);
+
 const Board = () => {
+  const classes = useStyles();
   const router = useRouter();
   const { id } = router.query;
   return (
     <div>
-      <Grid container>
+      <Grid item xs={12}>
         <Grid item xs={12}>
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSO0vyXejYXLyLixtnMLybTiXXd1pP30ktKatHpWUodVLo4BMPK" />
+          <img
+            className={classes.image}
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSO0vyXejYXLyLixtnMLybTiXXd1pP30ktKatHpWUodVLo4BMPK"
+          />
         </Grid>
         <Grid item xs={12}>
           <h1>{dummy.title}</h1>
           <Typography color={"textPrimary"}>
-            {dummy.competitionStartDate} • {dummy.country}, {dummy.place} •{" "}
+            {dummy.competitionStartDate} • {dummy.country}, {dummy.place} •
             {dummy.category} •{dummy.genre}
           </Typography>
           <Typography color={"textPrimary"}>{dummy.content}</Typography>
